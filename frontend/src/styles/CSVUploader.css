@@ -1,0 +1,123 @@
+.csv-uploader {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-zone:hover {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+.drop-zone.drag-over {
+  border-color: #007bff;
+  background-color: #e6f3ff;
+  transform: scale(1.02);
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.upload-icon {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+.upload-content h3 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.upload-content p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.file-info {
+  margin-top: 8px;
+}
+
+.file-info small {
+  color: #888;
+  font-size: 14px;
+}
+
+.file-selected {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.file-icon {
+  font-size: 32px;
+}
+
+.file-details {
+  flex: 1;
+  text-align: left;
+}
+
+.file-details h4 {
+  margin: 0 0 4px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.file-details p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.remove-btn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.remove-btn:hover {
+  background: #ff3838;
+}
+
+.drop-zone.has-file {
+  border-style: solid;
+  border-color: #28a745;
+  background-color: #f8fff9;
+}
