@@ -1,0 +1,35 @@
+services:
+  # Backend Service
+  - type: web
+    name: csvsleuth-backend
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python wsgi.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /api/health
+
+  # Frontend Service
+  - type: web
+    name: csvsleuth-frontend
+    runtime: static
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://csvsleuth-backend.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

@@ -30,6 +30,9 @@ backend/uploads/
 
 # Environment
 .env
+.env.local
+.env.production
+.env.*.local
 .venv
 
 # IDE

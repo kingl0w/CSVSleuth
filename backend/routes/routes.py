@@ -16,6 +16,12 @@ api_bp = Blueprint('api', __name__)
 processed_data_store = {}
 
 
+@api_bp.route('/health', methods=['GET'])
+def health_check():
+    """Health check endpoint for deployment monitoring"""
+    return jsonify({'status': 'healthy', 'service': 'CSVSleuth API'}), 200
+
+
 @api_bp.route('/upload', methods=['POST'])
 def upload_file():
     """Handle CSV file upload, validation, cleaning, and analysis"""
